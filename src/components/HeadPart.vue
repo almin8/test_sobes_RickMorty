@@ -7,7 +7,7 @@
       class="inputSearch"
       @input="getSearch(), inputF()"
       v-model.trim="inputValueComp"
-      type="search"
+      type="text"
       placeholder="Поиск"
     />
     <div
