@@ -10,20 +10,14 @@
       type="text"
       placeholder="Поиск"
     />
-    <div
-      v-if="countDataComp == 0"
-      style="text-align: center; color: #c1c2c7"
-    ></div>
-    <div v-if="countDataComp == 1" style="text-align: center; color: #c1c2c7">
+    <div v-if="countDataComp == 0" class="count"></div>
+    <div v-if="countDataComp == 1" class="count">
       {{ countDataComp }} персонаж
     </div>
-    <div
-      v-if="countDataComp > 1 && countDataComp < 5"
-      style="text-align: center; color: #c1c2c7"
-    >
+    <div v-if="countDataComp > 1 && countDataComp < 5" class="count">
       {{ countDataComp }} персонажа
     </div>
-    <div v-if="countDataComp > 4" style="text-align: center; color: #c1c2c7">
+    <div v-if="countDataComp > 4" class="count">
       {{ countDataComp }} персонажей
     </div>
   </div>
@@ -120,18 +114,23 @@ export default {
 <style scoped>
 .logo {
   position: relative;
-  top: 33px;
+  top: 37px;
   left: 26px;
 }
 .headFont {
   text-align: center;
   font-size: 22px;
   margin: 18px;
+  margin-bottom: -1px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.2px;
   font-family: "Lato", sans-serif;
 }
 .inputSearch {
   margin: 18px;
-  margin-top: -13px;
+  margin-top: -9px;
   padding: 8px 41px;
   border-radius: 15px;
   height: 33px;
@@ -139,5 +138,12 @@ export default {
   border: none;
   width: 71%;
   font-size: 15px;
+}
+.count {
+  text-align: center;
+  color: #c1c2c7;
+  margin-top: -6px;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
 }
 </style>
