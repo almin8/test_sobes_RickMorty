@@ -2,7 +2,7 @@
   <div>
     <img :src="headSVG" width="375" height="44" />
     <div class="headFont">Персонажи</div>
-    <img class="logo" :src="searchSVG" width="24" height="21" />
+    <img class="logo" :src="searchSVG" width="29" height="33" />
     <input
       class="inputSearch"
       @input="getSearch(), inputF()"
@@ -119,7 +119,7 @@ export default {
 <style scoped>
 .logo {
   position: relative;
-  top: 24px;
+  top: 33px;
   left: 26px;
 }
 .headFont {
@@ -131,11 +131,12 @@ export default {
 .inputSearch {
   margin: 18px;
   margin-top: -13px;
-  padding: 8px 35px;
+  padding: 8px 41px;
   border-radius: 15px;
-  height: 40px;
+  height: 33px;
   background-color: #ffffff;
   border: none;
-  width: 91%;
+  width: 71%;
+  font-size: 15px;
 }
 </style>
