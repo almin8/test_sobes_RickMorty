@@ -65,33 +65,6 @@ export default {
     };
   },
   methods: {
-    async getSearch() {
-      if (this.page > 1) {
-        this.page = 1;
-      }
-      this.data = [];
-      try {
-        const resp = await axios.get(
-          `https://rickandmortyapi.com/api/character/`,
-          {
-            params: { page: this.page, name: this.inputValue },
-          }
-        );
-        console.log(resp.data.results);
-        this.data.push(...resp.data.results);
-
-        if (resp.data.info.pages == this.page) {
-          this.showButton = false;
-        } else {
-          this.showButton = true;
-        }
-        this.countData = resp.data.info.count;
-      } catch (e) {
-        console.log(e);
-        this.showButton = false;
-        this.countData = 0;
-      }
-    },
     getNextPage() {
       this.page += 1;
       this.getData();
