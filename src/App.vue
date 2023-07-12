@@ -56,7 +56,6 @@ export default {
       page: 1,
       showButton: true,
       inputValue: "",
-      countData: 0,
       inputValueClear: 0,
       logoSVG: require("./assets/logo.svg"),
       firstMenuSVG: require("./assets/firstMenu.svg"),

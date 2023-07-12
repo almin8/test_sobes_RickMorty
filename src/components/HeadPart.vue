@@ -23,7 +23,7 @@
     >
       {{ countDataComp }} персонажа
     </div>
-    <div v-if="countDataComp > 5" style="text-align: center; color: #c1c2c7">
+    <div v-if="countDataComp > 4" style="text-align: center; color: #c1c2c7">
       {{ countDataComp }} персонажей
     </div>
   </div>
@@ -82,6 +82,7 @@ export default {
     inputF() {
       this.$emit("inputValueCompF", this.inputValueComp);
       this.$emit("dataCompF", this.dataComp);
+      this.$emit("pageCompF", this.pageComp);
     },
     async getData() {
       try {
