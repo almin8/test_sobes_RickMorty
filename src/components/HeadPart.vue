@@ -43,7 +43,13 @@ export default {
       showButtonComp: false,
     };
   },
-  props: {},
+  watch: {
+    clearInput() {
+      this.inputValueComp = "";
+      this.getSearch();
+    },
+  },
+  props: { clearInput: { type: Number } },
   methods: {
     async getSearch() {
       if (this.pageComp > 1) {
@@ -71,12 +77,11 @@ export default {
         this.$emit("showButtonCompF", false);
         this.countDataComp = 0;
       }
+      this.inputF();
     },
     inputF() {
       this.$emit("inputValueCompF", this.inputValueComp);
       this.$emit("dataCompF", this.dataComp);
-      this.$emit("countDataCompF", this.countDataComp);
-      this.$emit("pageCompF", this.pageComp);
     },
     async getData() {
       try {
@@ -102,6 +107,7 @@ export default {
         this.showButton = false;
         this.countDataComp = 0;
       }
+      this.inputF();
     },
   },
   mounted() {

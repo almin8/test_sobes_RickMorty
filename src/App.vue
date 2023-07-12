@@ -7,6 +7,7 @@
         @countDataCompF="countData = $event"
         @pageCompF="page = $event"
         @showButtonCompF="showButton = $event"
+        :clearInput="inputValueClear"
       ></head-part>
       <body-part :dataComp="data"></body-part>
       <div class="footer" v-if="showButton" @click="getNextPage">
@@ -14,7 +15,10 @@
         <div>↓</div>
       </div>
       <div v-if="inputValue" class="footerArea">
-        <div @click="(inputValue = ''), getSearch()" class="footerBut">
+        <div
+          @click="(inputValueClear = Math.random()), getSearch()"
+          class="footerBut"
+        >
           Сбросить Поиск
         </div>
         <div class="footerMenu">
@@ -53,6 +57,7 @@ export default {
       showButton: true,
       inputValue: "",
       countData: 0,
+      inputValueClear: 0,
       logoSVG: require("./assets/logo.svg"),
       firstMenuSVG: require("./assets/firstMenu.svg"),
       secondMenuSVG: require("./assets/secondMenu.svg"),
